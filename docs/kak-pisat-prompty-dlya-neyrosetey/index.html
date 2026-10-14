@@ -1,0 +1,174 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Промпты для нейросетей: как написать промпт, который даёт нужный результат</title>
+<meta name="description" content="Как писать промпты для нейросетей: структура промта, примеры для видео, картинок и текста, частые ошибки. Разбор AI-студии НЕЙРОМЕДИА на реальных задачах.">
+<link rel="canonical" href="https://blog.nmedia.pro/kak-pisat-prompty-dlya-neyrosetey/">
+<meta property="og:type" content="article"><meta property="og:title" content="Промпты для нейросетей: как написать промпт, который даёт нужный результат">
+<meta property="og:description" content="Как писать промпты для нейросетей: структура промта, примеры для видео, картинок и текста, частые ошибки. Разбор AI-студии НЕЙРОМЕДИА на реальных задачах."><meta property="og:url" content="https://blog.nmedia.pro/kak-pisat-prompty-dlya-neyrosetey/">
+<meta property="og:image" content="https://blog.nmedia.pro/kak-pisat-prompty-dlya-neyrosetey/cover.png"><meta property="og:locale" content="ru_RU"><meta property="og:site_name" content="Блог НЕЙРОМЕДИА">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
+<link rel="alternate" type="application/rss+xml" title="Блог НЕЙРОМЕДИА" href="https://blog.nmedia.pro/feed.xml">
+<link rel="preload" href="/static/fonts/montserrat-400-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/static/fonts/fonts.css">
+<link rel="stylesheet" href="/static/style.css?v=202610141144">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Промпты для нейросетей: как писать промт, чтобы получать то, что задумал, а не похожее", "description": "Как писать промпты для нейросетей: структура промта, примеры для видео, картинок и текста, частые ошибки. Разбор AI-студии НЕЙРОМЕДИА на реальных задачах.", "image": "https://blog.nmedia.pro/kak-pisat-prompty-dlya-neyrosetey/cover.png", "datePublished": "2026-10-14", "dateModified": "2026-10-14", "author": {"@type": "Person", "name": "Никита Седов", "jobTitle": "основатель AI-студии НЕЙРОМЕДИА", "url": "https://nmedia.pro/"}, "publisher": {"@type": "Organization", "name": "НЕЙРОМЕДИА", "url": "https://nmedia.pro/"}, "mainEntityOfPage": "https://blog.nmedia.pro/kak-pisat-prompty-dlya-neyrosetey/", "inLanguage": "ru", "abstract": "Промпт это текстовое задание нейросети, от его точности напрямую зависит результат Рабочая структура: объект, действие, обстановка, свет и стиль, технические параметры, запреты Главный приём: писать не только что нужно, но и что менять нельзя Одна правка за раз: пять требований в одном промте дают кашу, в которой непонятно, что сломалось На английском сложные инструкции выполняются точнее почти везде, кроме российских сервисов"}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Блог", "item": "https://blog.nmedia.pro/"}, {"@type": "ListItem", "position": 2, "name": "Обучение", "item": "https://blog.nmedia.pro/#obuchenie"}, {"@type": "ListItem", "position": 3, "name": "Промпты для нейросетей: как писать промт, чтобы получать то, что задумал, а не похожее", "item": "https://blog.nmedia.pro/kak-pisat-prompty-dlya-neyrosetey/"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "VideoObject", "name": "Шоурил AI-студии НЕЙРОМЕДИА", "description": "Рекламные и имиджевые ИИ-ролики студии НЕЙРОМЕДИА: все кадры созданы нейросетями.", "thumbnailUrl": "https://blog.nmedia.pro/static/video/showreel-poster.webp", "contentUrl": "https://blog.nmedia.pro/static/video/showreel.mp4", "uploadDate": "2026-09-01", "duration": "PT33S"}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Как правильно писать промпт для нейросети?", "acceptedAnswer": {"@type": "Answer", "text": "По структуре: объект, действие, обстановка, свет и стиль, технические параметры, запреты. Конкретными существительными вместо оценочных прилагательных. И обязательно с блоком о том, что менять нельзя, если вы правите существующее изображение или видео."}}, {"@type": "Question", "name": "Промт и промпт это одно и то же?", "acceptedAnswer": {"@type": "Answer", "text": "Да, это два написания одного слова (от английского prompt). В поиске встречаются оба, разницы в смысле нет."}}, {"@type": "Question", "name": "На каком языке писать промпты?", "acceptedAnswer": {"@type": "Answer", "text": "Для зарубежных моделей сложные промпты лучше работают на английском, простые можно на русском. Для российских сервисов вроде Kandinsky, Шедеврума и Алисы AI пишите по-русски, переводить не нужно."}}, {"@type": "Question", "name": "Почему промпт из интернета не даёт такой же результат?", "acceptedAnswer": {"@type": "Answer", "text": "Обычно по трём причинам: модель обновилась с момента написания промпта, показанный результат был выбран из десятка попыток, или у автора был другой контекст, например загруженное исходное фото. Берите из чужих промптов структуру, а не текст."}}, {"@type": "Question", "name": "Сколько попыток нужно, чтобы получить нужный кадр?", "acceptedAnswer": {"@type": "Answer", "text": "На практике от пяти до пятнадцати, в зависимости от сложности сцены. Это не признак плохого промпта, а нормальный рабочий процесс, который стоит закладывать в сроки."}}, {"@type": "Question", "name": "Где хранить свои промпты?", "acceptedAnswer": {"@type": "Answer", "text": "В любом файле, где вы их найдёте: заметки, таблица, документ. Важно записывать не только текст промпта, но и под какую модель и под какую задачу он работал, иначе через месяц он окажется бесполезным."}}]}</script><meta property="article:published_time" content="2026-10-14"><script>(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");ym(112138775,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});</script><noscript><div><img src="https://mc.yandex.ru/watch/112138775" style="position:absolute;left:-9999px" alt=""></div></noscript>
+</head><body><header class="hdr"><div class="wrap">
+<a class="logo" href="/">НЕЙРОМЕДИА<small>БЛОГ</small></a>
+<nav class="nav"><a href="https://nmedia.pro/?utm_source=blog&utm_medium=article&utm_campaign=kak-pisat-prompty-dlya-neyrosetey&utm_content=nav">Студия</a><a href="https://t.me/neuromedia_tg?utm_source=blog&utm_medium=article&utm_campaign=kak-pisat-prompty-dlya-neyrosetey&utm_content=nav">Telegram</a>
+<a class="btn" href="https://nmedia.pro/academy?utm_source=blog&utm_medium=article&utm_campaign=kak-pisat-prompty-dlya-neyrosetey&utm_content=nav">Курс по ИИ-видео</a></nav></div></header>
+<main><div class="wrap">
+<div class="crumbs"><a href="/">Блог</a> / <a href="/#obuchenie">Обучение</a></div>
+<div class="art-head"><div class="kicker">Обучение</div>
+<h1>Промпты для нейросетей: как писать промт, чтобы получать то, что задумал, а не похожее</h1>
+<p class="lead">За год работы на заказах у нас накопились промпты, которые стабильно дают результат, и понимание, почему большинство чужих «волшебных промптов» из интернета не работает. Собрали структуру, которой пользуемся сами, с примерами под картинки, видео и текст.</p>
+<div class="author"><div class="av">НС</div><div><b>Никита Седов</b>основатель AI-студии НЕЙРОМЕДИА<span class="creds">Делали ролики для <i>Ростеха</i>, <i>АвтоВАЗа</i>, <i>Кинопоиска</i></span><span class="when"><time datetime="2026-10-14">14 октября 2026</time> · 7 мин чтения</span></div></div></div>
+<figure class="cover"><img src="/kak-pisat-prompty-dlya-neyrosetey/cover.png" width="1200" height="630" alt="Промпты для нейросетей: как писать промт, чтобы получать то, что задумал, а не похожее" fetchpriority="high"></figure>
+<article class="body"><div class="tldr"><div class="tldr-h">Коротко</div><ul><li><b>Промпт</b> это текстовое задание нейросети, от его точности напрямую зависит результат</li><li><b>Рабочая структура:</b> объект, действие, обстановка, свет и стиль, технические параметры, запреты</li><li><b>Главный приём:</b> писать не только что нужно, но и что менять нельзя</li><li><b>Одна правка за раз:</b> пять требований в одном промте дают кашу, в которой непонятно, что сломалось</li><li><b>На английском</b> сложные инструкции выполняются точнее почти везде, кроме российских сервисов</li></ul></div><nav class="toc"><b>Содержание</b><ol><li><a href="#iz-chego-sostoit-rabochiy-prompt">Из чего состоит рабочий промпт</a></li><li><a href="#glavnyy-priem-pishite-chego-delat-nelzya">Главный приём: пишите, чего делать нельзя</a></li><li><a href="#prompty-dlya-kartinok">Промпты для картинок</a></li><li><a href="#prompty-dlya-video">Промпты для видео</a></li><li><a href="#prompty-dlya-tekstovyh-neyrosetey">Промпты для текстовых нейросетей</a></li><li><a href="#na-russkom-ili-na-angliyskom">На русском или на английском</a></li><li><a href="#pochemu-chuzhie-gotovye-prompty-ne-rabotayut">Почему чужие «готовые промпты» не работают</a></li><li><a href="#kak-otlazhivat-prompt">Как отлаживать промпт</a></li><li><a href="#tipichnye-oshibki">Типичные ошибки</a></li><li><a href="#chastye-voprosy">Частые вопросы</a></li></ol></nav><p>Промпт (его же пишут как «промт») это текстовое задание, которое вы даёте нейросети. От того, как он сформулирован, результат зависит сильнее, чем от выбора самого сервиса: хороший промпт в среднем инструменте даёт лучший результат, чем небрежный в топовом.</p>
+<p>Мы в AI-студии НЕЙРОМЕДИА пишем промпты каждый день, под рекламные кадры и ролики, где ошибка стоит времени и денег. За это время стало понятно главное: «волшебных промптов», которые кто-то выложил в интернете и которые сработают у вас, почти не бывает. Работает не чужой текст, а структура, которую вы подставляете под свою задачу. Эту структуру и разберём.</p>
+<h2 id="iz-chego-sostoit-rabochiy-prompt">Из чего состоит рабочий промпт</h2>
+<p>Шесть блоков. Не все нужны всегда, но порядок лучше держать этот.</p>
+<table>
+<thead>
+<tr>
+<th>Блок</th>
+<th>Что в нём</th>
+<th>Пример</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Объект</td>
+<td>кто или что в кадре, с деталями</td>
+<td>пожилой мастер в кожаном фартуке</td>
+</tr>
+<tr>
+<td>Действие</td>
+<td>что происходит</td>
+<td>медленно поворачивает деталь в руках</td>
+</tr>
+<tr>
+<td>Обстановка</td>
+<td>где, что вокруг</td>
+<td>тесная мастерская, стеллажи с инструментом</td>
+</tr>
+<tr>
+<td>Свет и стиль</td>
+<td>как это выглядит</td>
+<td>тёплый свет от лампы, фотореалистично</td>
+</tr>
+<tr>
+<td>Технические параметры</td>
+<td>план, камера, формат</td>
+<td>средний план, лёгкий наезд, 16:9</td>
+</tr>
+<tr>
+<td>Запреты</td>
+<td>что нельзя менять или добавлять</td>
+<td>без текста в кадре, лицо не менять</td>
+</tr>
+</tbody></table>
+<p>Последний блок новички пропускают всегда, и именно он решает половину проблем.</p>
+<h2 id="glavnyy-priem-pishite-chego-delat-nelzya">Главный приём: пишите, чего делать нельзя</h2>
+<p>Нейросеть по умолчанию считает, что имеет право улучшать всё, до чего дотянется. Поэтому любой промпт на изменение чего-то существующего состоит из двух половин: что сделать и что не трогать.</p>
+<p>Плохо:</p>
+<pre><code>поставь этот товар на красивый фон
+</code></pre>
+<p>Хорошо:</p>
+<pre><code>помести предмет на деревянную столешницу у окна,
+мягкий утренний свет слева, лёгкие тени,
+упаковку, этикетку, логотип и текст на упаковке
+оставь полностью без изменений, фотореалистично
+</code></pre>
+<p>Разница в результате не стилистическая, а принципиальная: в первом случае вы получите похожую упаковку, во втором свою. Подробнее про это в разборе про <a href="/neyroset-dlya-obrabotki-foto/">обработку фото нейросетью</a>.</p>
+<div class="cta-inline"><div class="t"><b>Промптинг это первое занятие курса</b><span>В курсе сценарий и промптинг идут первым занятием, потому что без них всё остальное бессмысленно: красивый инструмент при плохом задании выдаёт красивый мусор. Разбираем на реальных кадрах из заказов.</span></div><a class="btn" href="https://nmedia.pro/academy?utm_source=blog&amp;utm_medium=article&amp;utm_campaign=kak-pisat-prompty-dlya-neyrosetey&amp;utm_content=inline1">Смотреть программу →</a></div>
+<h2 id="prompty-dlya-kartinok">Промпты для картинок</h2>
+<p>Здесь важнее всего конкретика существительных и описание света. Прилагательные вроде «красивый», «качественный», «профессиональный» не несут информации и занимают место.</p>
+<pre><code>женщина лет тридцати в бежевом пальто стоит у витрины кафе,
+смотрит в сторону улицы, в руках бумажный стакан,
+вечер, город после дождя, отражения огней в асфальте,
+холодный синий свет улицы и тёплый из окна кафе,
+средний план, малая глубина резкости, фотореалистично
+</code></pre>
+<p>Что здесь работает: возраст и одежда вместо «красивая девушка», конкретное время суток, два источника света с разной температурой, указание плана и глубины резкости.</p>
+<h2 id="prompty-dlya-video">Промпты для видео</h2>
+<p>Главное отличие от картинок: видеонейросеть нужно просить о движении, и просить скромно. Чем больше движения вы закладываете, тем выше шанс, что сцена развалится.</p>
+<pre><code>человек слегка улыбается и поворачивает голову к камере,
+на фоне мягко мерцают огни, лёгкий наезд камеры вперёд,
+без резких движений, 5 секунд
+</code></pre>
+<p>Правило, выведенное на заказах: отдельно описывайте движение объекта и отдельно движение камеры. Если смешать их в одну фразу, модель обычно выполняет что-то одно. И почти всегда лучше работает режим «картинка в видео»: сначала получаете идеальный кадр в генераторе изображений, потом оживляете его. Про это подробно в статье про <a href="/kak-sdelat-reklamnyy-rolik-s-pomoshchyu-neyroseti/">рекламный ролик с помощью нейросети</a>.</p>
+<figure class="frame"><img src="/static/media/f1-cockpit.webp" loading="lazy" decoding="async" width="1600" height="900" alt="Вид из кокпита болида Формулы-1 — динамичный ИИ-кадр"><figcaption>Кадр из работ студии: сложная сцена с техникой, такие промпты мы собираем из блоков и правим по одному</figcaption></figure>
+<h2 id="prompty-dlya-tekstovyh-neyrosetey">Промпты для текстовых нейросетей</h2>
+<p>Тут структура другая, и она ближе к постановке задачи сотруднику.</p>
+<pre><code>Роль: ты редактор, который правит тексты для сайта студии.
+Задача: сократить текст ниже до 600 знаков, сохранив все факты и цифры.
+Ограничения: не добавлять ничего от себя, не использовать длинные тире,
+не писать вводных вроде «в современном мире».
+Формат ответа: только готовый текст, без комментариев.
+Текст: ...
+</code></pre>
+<p>Четыре блока: роль, задача, ограничения, формат ответа. Самый недооценённый из них последний: если не сказать, в каком виде нужен ответ, вы получите его вперемешку с рассуждениями.</p>
+<h2 id="na-russkom-ili-na-angliyskom">На русском или на английском</h2>
+<p>Практика такая. Зарубежные модели (Midjourney, Nano Banana, Seedream, Kling, Seedance) понимают русский, но сложные инструкции выполняют заметно точнее на английском. Если промпт простой, пишите как удобно. Если в нём пять условий и пара запретов, переведите.</p>
+<p>Российские сервисы (Kandinsky в ГигаЧате, Шедеврум, Алиса AI) наоборот лучше понимают русский, и переводить для них ничего не нужно.</p>
+<h2 id="pochemu-chuzhie-gotovye-prompty-ne-rabotayut">Почему чужие «готовые промпты» не работают</h2>
+<p>Самое частое разочарование: человек копирует промпт из подборки, вставляет и получает не то, что на картинке в подборке. Причин три, и все скучные.</p>
+<ol>
+<li><strong>Версия модели другая.</strong> Промпт писался под Midjourney прошлого поколения, а у вас текущее, и оно реагирует иначе.</li>
+<li><strong>Результат на картинке был выбран из десятка.</strong> Автор сгенерировал пятнадцать вариантов и показал лучший. У вас первый.</li>
+<li><strong>Контекст другой.</strong> Если в исходнике было загруженное фото, а у вас нет, промпт работает в другой задаче.</li>
+</ol>
+<p>Поэтому полезнее не собирать чужие промпты, а разобрать один свой: сгенерировать, посмотреть, что не так, поменять ровно одно условие, сгенерировать снова. Четыре-пять таких итераций дают вам промпт, который работает именно у вас.</p>
+<h2 id="kak-otlazhivat-prompt">Как отлаживать промпт</h2>
+<p>Метод, которым пользуемся сами.</p>
+<p><strong>Шаг 1.</strong> Напишите короткий промпт из двух блоков: объект и обстановка. Сгенерируйте.</p>
+<p><strong>Шаг 2.</strong> Посмотрите, что не так. Назовите это одним предложением: «свет плоский», «не тот ракурс», «лицо поехало».</p>
+<p><strong>Шаг 3.</strong> Добавьте один блок, который чинит именно это. Не три, один.</p>
+<p><strong>Шаг 4.</strong> Сгенерируйте снова и сравните. Если стало хуже, вы знаете, какая именно строка виновата.</p>
+<p><strong>Шаг 5.</strong> Когда результат устраивает, сохраните промпт целиком в отдельный файл. Через неделю вы не вспомните, что именно в нём работало.</p>
+<p>Этот способ медленнее, чем кажется, и быстрее, чем метод «переписать всё и попробовать ещё раз», которым обычно пользуются.</p>
+<figure class="frame"><img src="/static/media/renaissance.webp" loading="lazy" decoding="async" width="1600" height="900" alt="Портрет в стиле живописи Возрождения с лилиями — ИИ-стилизация"><figcaption>Кадр из работ студии: стилизованная сцена, её промпт собирался итерациями, по одному условию за раз</figcaption></figure>
+<h2 id="tipichnye-oshibki">Типичные ошибки</h2>
+<ul>
+<li><strong>Оценочные слова вместо описания.</strong> «Красиво», «качественно», «профессионально» не несут информации.</li>
+<li><strong>Пять правок в одном промпте.</strong> Непонятно, какая сломала результат. Меняйте по одной.</li>
+<li><strong>Нет блока запретов.</strong> Главная причина, почему «получился не тот человек» и «упаковка не моя».</li>
+<li><strong>Текст внутри кадра.</strong> Нейросети до сих пор путают буквы, особенно русские. Текст накладывайте поверх в редакторе.</li>
+<li><strong>Копирование чужого промпта целиком.</strong> Берите структуру, а не текст.</li>
+<li><strong>Не сохранять удачные промпты.</strong> Самая обидная ошибка: нашли рабочую формулировку и потеряли её.</li>
+</ul>
+<div class="cta-inline magnet"><div class="t"><b>Бесплатный урок из курса по промокоду «Блог»</b><span>Напишите слово «Блог» в Telegram, и я пришлю урок из «НЕЙРОМЕДИА Академии»: как собрать рекламный ролик нейросетями, от первого кадра до монтажа. Без ботов и рассылок.</span></div><a class="btn" href="https://t.me/neuromedia_tg?utm_source=blog&amp;utm_medium=article&amp;utm_campaign=kak-pisat-prompty-dlya-neyrosetey&amp;utm_content=magnet&amp;text=%D0%91%D0%BB%D0%BE%D0%B3">Забрать урок в Telegram</a></div>
+<h2 id="chastye-voprosy">Частые вопросы</h2>
+<h3 id="kak-pravilno-pisat-prompt-dlya-neyroseti">Как правильно писать промпт для нейросети?</h3>
+<p>По структуре: объект, действие, обстановка, свет и стиль, технические параметры, запреты. Конкретными существительными вместо оценочных прилагательных. И обязательно с блоком о том, что менять нельзя, если вы правите существующее изображение или видео.</p>
+<h3 id="promt-i-prompt-eto-odno-i-to-zhe">Промт и промпт это одно и то же?</h3>
+<p>Да, это два написания одного слова (от английского prompt). В поиске встречаются оба, разницы в смысле нет.</p>
+<h3 id="na-kakom-yazyke-pisat-prompty">На каком языке писать промпты?</h3>
+<p>Для зарубежных моделей сложные промпты лучше работают на английском, простые можно на русском. Для российских сервисов вроде Kandinsky, Шедеврума и Алисы AI пишите по-русски, переводить не нужно.</p>
+<h3 id="pochemu-prompt-iz-interneta-ne-daet-takoy-zhe-rezultat">Почему промпт из интернета не даёт такой же результат?</h3>
+<p>Обычно по трём причинам: модель обновилась с момента написания промпта, показанный результат был выбран из десятка попыток, или у автора был другой контекст, например загруженное исходное фото. Берите из чужих промптов структуру, а не текст.</p>
+<h3 id="skolko-popytok-nuzhno-chtoby-poluchit-nuzhnyy-kadr">Сколько попыток нужно, чтобы получить нужный кадр?</h3>
+<p>На практике от пяти до пятнадцати, в зависимости от сложности сцены. Это не признак плохого промпта, а нормальный рабочий процесс, который стоит закладывать в сроки.</p>
+<h3 id="gde-hranit-svoi-prompty">Где хранить свои промпты?</h3>
+<p>В любом файле, где вы их найдёте: заметки, таблица, документ. Важно записывать не только текст промпта, но и под какую модель и под какую задачу он работал, иначе через месяц он окажется бесполезным.</p>
+<section class="reel"><div class="reel-head"><div class="kicker">Шоурил студии</div><h2>Так выглядит ИИ-видео, которое мы делаем для брендов</h2><p>Все кадры созданы нейросетями, без съёмок. Этому процессу, от сценария до монтажа, мы и учим в курсе.</p></div><div class="reel-player"><video controls playsinline preload="none" poster="/static/video/showreel-poster.webp" width="1280" height="720"><source src="/static/video/showreel.mp4" type="video/mp4"><source src="/static/video/showreel.webm" type="video/webm"></video></div></section><aside class="author-box"><img class="team" src="/static/media/team.webp" alt="Команда AI-студии НЕЙРОМЕДИА" loading="lazy"><div><b>Никита Седов</b><span>Основатель AI-студии НЕЙРОМЕДИА. За последний год студия сделала рекламные и имиджевые ролики для Ростеха, АвтоВАЗа, Кинопоиска и других крупных брендов — всё, о чём пишем в блоге, проверено на реальных заказах. <a href="https://nmedia.pro/?utm_source=blog&amp;utm_medium=article&amp;utm_campaign=kak-pisat-prompty-dlya-neyrosetey&amp;utm_content=author">Работы студии →</a></span></div></aside><section class="cta-big">
+<h2>Научитесь делать рекламное видео нейросетями за пару недель</h2>
+<p>Курс от AI-студии НЕЙРОМЕДИА — мы делаем ролики для Ростеха, АвтоВАЗа, Кинопоиска и других брендов и учим тому же, что делаем на заказах. Без съёмок, команды и опыта в видео — нужен только ноутбук с браузером.</p>
+<ul>
+<li><b>9 900 ₽</b>«Сам»: 10 уроков от А до Я, все промпты и связки нейросетей</li>
+<li><b>19 900 ₽</b>«С поддержкой»: проверка работ, разборы ошибок, чат с кураторами</li>
+<li><b>29 900 ₽</b>«Под ключ»: учим находить клиентов, ведём до первого заказа</li>
+</ul>
+<div class="row"><a class="btn" href="https://nmedia.pro/academy?utm_source=blog&amp;utm_medium=article&amp;utm_campaign=kak-pisat-prompty-dlya-neyrosetey&amp;utm_content=final">Выбрать тариф →</a>
+<a class="btn ghost" href="https://t.me/neuromedia_tg?utm_source=blog&amp;utm_medium=article&amp;utm_campaign=kak-pisat-prompty-dlya-neyrosetey&amp;utm_content=final_magnet&amp;text=%D0%91%D0%BB%D0%BE%D0%B3">Забрать бесплатный урок →</a></div>
+</section></article>
+</div><section class="related"><h2>Читайте также</h2><div class="grid"><a class="card" href="/novogodnee-video-neyrosetyu/"><img src="/novogodnee-video-neyrosetyu/cover.png" loading="lazy" width="1200" height="630" alt=""><div class="in"><div class="meta"><span class="tag">Обучение</span><span>13 октября 2026</span></div><h2>Новогоднее видео нейросетью: как сделать поздравление, открытку и новогоднюю рекламу</h2><p>Как сделать новогоднее видео нейросетью: поздравление от Деда Мороза, открытка, реклама к Новому году 2027. Инструкция и промпты от AI-студии НЕЙРОМЕДИА.</p></div></a><a class="card" href="/kak-nauchitsya-delat-video-neyrosetyami/"><img src="/kak-nauchitsya-delat-video-neyrosetyami/cover.png" loading="lazy" width="1200" height="630" alt=""><div class="in"><div class="meta"><span class="tag">Обучение</span><span>3 октября 2026</span></div><h2>Обучение нейросетям с нуля: как научиться делать ИИ-видео и не потратить полгода</h2><p>Обучение нейросетям для видео с нуля от AI-студии НЕЙРОМЕДИА: какие навыки нужны, план на 4 недели, бесплатные пути и как выбрать курс по ИИ-видео.</p></div></a><a class="card" href="/kak-ozhivit-foto-neyrosetyu/"><img src="/kak-ozhivit-foto-neyrosetyu/cover.png" loading="lazy" width="1200" height="630" alt=""><div class="in"><div class="meta"><span class="tag">Обучение</span><span>30 сентября 2026</span></div><h2>Как оживить фото нейросетью и сделать видео из фото: бесплатные сервисы, пошаговая инструкция и промпты</h2><p>Как оживить фото нейросетью бесплатно и сделать видео из фото: Алиса, Шедеврум, Kling, PixVerse, Veo и другие, доступ из России, лимиты и промпты от AI-студии НЕЙРОМЕДИА.</p></div></a></div></section></main><footer class="ftr"><div class="wrap">
+<div>© 2026 НЕЙРОМЕДИА — AI film studio<br>ИП Седов Н. С.</div>
+<div class="links"><a href="https://nmedia.pro/?utm_source=blog&utm_medium=article&utm_campaign=kak-pisat-prompty-dlya-neyrosetey&utm_content=footer">nmedia.pro</a><a href="https://nmedia.pro/academy?utm_source=blog&utm_medium=article&utm_campaign=kak-pisat-prompty-dlya-neyrosetey&utm_content=footer">Академия</a>
+<a href="https://t.me/neuromedia_tg?utm_source=blog&utm_medium=article&utm_campaign=kak-pisat-prompty-dlya-neyrosetey&utm_content=footer">Telegram</a><a href="/feed.xml">RSS</a></div></div></footer><div class="sticky-cta" id="sticky"><span>Курс по ИИ-видео<br><b style="color:#fff">11 уроков, от идеи до монтажа</b></span>
+<a class="btn" href="https://nmedia.pro/academy?utm_source=blog&amp;utm_medium=article&amp;utm_campaign=kak-pisat-prompty-dlya-neyrosetey&amp;utm_content=sticky">Программа →</a></div>
+<script>(function(){var s=document.getElementById('sticky');if(!s)return;document.body.classList.add('has-sticky');
+var c=document.querySelector('.cta-inline'),st=c?c.getBoundingClientRect().top+scrollY:1500;
+function f(){var y=window.scrollY,h=document.body.scrollHeight-innerHeight;s.classList.toggle('show',y>st&&y<h-1400)}
+addEventListener('scroll',f,{passive:true});f();})();</script><script>(function(){var v=document.querySelectorAll('video.lazyclip');var t=document.createElement('video');var mp4=!!t.canPlayType('video/mp4; codecs="avc1.42E01E"');v.forEach(function(x){if(!mp4&&x.dataset.webm)x.dataset.src=x.dataset.webm});if(!('IntersectionObserver'in window)){v.forEach(function(x){x.src=x.dataset.src;x.play()});return}
+var o=new IntersectionObserver(function(es){es.forEach(function(e){var x=e.target;if(e.isIntersecting){if(!x.src)x.src=x.dataset.src;x.play().catch(function(){})}else{x.pause()}})},{rootMargin:'200px'});v.forEach(function(x){o.observe(x)})})();</script><script>document.querySelectorAll('.body pre').forEach(function(p){var b=document.createElement('button');b.type='button';b.className='copy';b.textContent='Скопировать';b.onclick=function(){var t=p.querySelector('code')?p.querySelector('code').innerText:p.innerText;(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(function(){b.textContent='Скопировано';setTimeout(function(){b.textContent='Скопировать'},1600)}).catch(function(){var r=document.createRange();r.selectNodeContents(p);var s=getSelection();s.removeAllRanges();s.addRange(r)});if(window.ym)try{ym(112138775,'reachGoal','copy_prompt')}catch(e){}};p.appendChild(b)})</script></body></html>

@@ -1,0 +1,98 @@
+{
+"static/video/niva-full.mp4": [
+1280,
+960
+],
+"static/video/niva-full.webm": [
+1280,
+960
+],
+"static/video/niva-loop.mp4": [
+960,
+720
+],
+"static/video/niva-loop.webm": [
+960,
+720
+],
+"static/video/samokat-full.mp4": [
+1280,
+720
+],
+"static/video/samokat-full.webm": [
+1280,
+720
+],
+"static/video/samokat-loop.mp4": [
+960,
+540
+],
+"static/video/samokat-loop.webm": [
+960,
+540
+],
+"static/video/semen-full.mp4": [
+1280,
+720
+],
+"static/video/semen-full.webm": [
+1280,
+720
+],
+"static/video/semen-loop.mp4": [
+960,
+540
+],
+"static/video/semen-loop.webm": [
+960,
+540
+],
+"static/video/showreel-teaser.mp4": [
+960,
+540
+],
+"static/video/showreel-teaser.webm": [
+960,
+540
+],
+"static/video/showreel.mp4": [
+1280,
+720
+],
+"static/video/showreel.webm": [
+1280,
+720
+],
+"static/video/vozm1.mp4": [
+960,
+540
+],
+"static/video/vozm1.webm": [
+960,
+540
+],
+"static/video/vozm2.mp4": [
+960,
+540
+],
+"static/video/vozm2.webm": [
+960,
+540
+],
+"static/video/vozm3.mp4": [
+960,
+540
+],
+"static/video/vozm3.webm": [
+960,
+540
+],
+"static/video/vozm4.mp4": [
+960,
+720
+],
+"static/video/vozm4.webm": [
+960,
+720
+]
+}

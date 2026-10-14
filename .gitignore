@@ -1,0 +1,7 @@
+preview/
+preview_pub/
+dist/
+src_media/
+__pycache__/
+*.pyc
+.sync_manifest.json
