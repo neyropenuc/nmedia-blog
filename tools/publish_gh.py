@@ -134,7 +134,7 @@ def main():
         if c.returncode:
             print("СТОП: коммит не прошёл\n" + (c.stderr or c.stdout)[:500])
             sys.exit(1)
-        p = sh("git", "push", "origin", "HEAD")
+        p = sh("git", "push", "origin", "HEAD:refs/heads/main")
         if p.returncode:
             print("СТОП: push не прошёл\n" + (p.stderr or p.stdout)[:500])
             print("Если это 403 про authorized repository set, репозиторий не "
