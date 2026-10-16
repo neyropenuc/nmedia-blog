@@ -157,7 +157,7 @@ shallow depth of field, photorealistic --ar 16:9 --raw
 
 ### Какая нейросеть генерирует картинки бесплатно?
 
-Бесплатно и без VPN: [Kandinsky 6.0](/kandinsky-kak-polzovatsya/) в ГигаЧате (по заявлению Сбера без лимита на количество), [Шедеврум](/shedevrum-kak-polzovatsya/) и Алиса AI от Яндекса. Из зарубежных бесплатный лимит есть у Nano Banana в Gemini, GPT Image в ChatGPT, Seedream в Dreamina и Krea, но первые три официально в России не работают.
+Бесплатно и без VPN: [Kandinsky 6.0](/kandinsky-kak-polzovatsya/) в ГигаЧате (по заявлению Сбера без лимита на количество), [Шедеврум](/shedevrum-kak-polzovatsya/) и [Алиса AI](/alisa-neyroset-chto-umeet/) от Яндекса. Из зарубежных бесплатный лимит есть у Nano Banana в Gemini, GPT Image в ChatGPT, Seedream в Dreamina и Krea, но первые три официально в России не работают.
 
 ### Где сгенерировать картинку на русском языке?
 
