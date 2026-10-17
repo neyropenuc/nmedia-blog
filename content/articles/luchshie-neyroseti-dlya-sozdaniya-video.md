@@ -134,7 +134,7 @@ steam rises from the coffee cup, rain drops on the glass, natural motion, no cut
 1. **Сценарий и промпты** в ChatGPT или Claude.
 2. **Кадры** в [Midjourney](/midjourney-kak-polzovatsya/) или [Nano Banana](/nano-banana-pro-kak-polzovatsya/). Если нужен реальный продукт клиента, переносим его в кадр.
 3. **Анимация** в Kling, Seedance, Veo или Hailuo, в зависимости от сцены.
-4. **Звук:** голос в [ElevenLabs](/elevenlabs-ozvuchka-na-russkom/), музыка в [Suno](/suno-kak-sozdat-pesnyu/).
+4. **Звук:** голос в [ElevenLabs](/elevenlabs-ozvuchka-na-russkom/) или другой [нейросети для озвучки текста](/neyroset-dlya-ozvuchki-teksta/), музыка в [Suno](/suno-kak-sozdat-pesnyu/).
 5. **Монтаж:** ритм, склейки, цвет.
 
 Подробный разбор с примерами: [как сделать рекламный ролик с помощью нейросети](/kak-sdelat-reklamnyy-rolik-s-pomoshchyu-neyroseti/).
