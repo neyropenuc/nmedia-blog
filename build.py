@@ -483,20 +483,6 @@ def build(include_drafts=False, out="dist"):
     open(os.path.join(dist, "feed.xml"), "w", encoding="utf-8").write(rss(arts))
     open(os.path.join(dist, "robots.txt"), "w", encoding="utf-8").write(
         f"User-agent: *\nAllow: /\nDisallow: /_preview/\nClean-param: utm_source&utm_medium&utm_campaign&utm_content\n\nSitemap: {SITE}/sitemap.xml\n")
-    # IndexNow: ключ должен лежать в КОРНЕ сайта (https://blog.nmedia.pro/<key>.txt),
-    # иначе Яндекс и Bing не подтверждают ключ и молча выбрасывают отправленные адреса.
-    key_file = os.path.join(ROOT, "indexnow.key")
-    if os.path.isfile(key_file):
-        key = open(key_file, encoding="utf-8").read().strip()
-        open(os.path.join(dist, key + ".txt"), "w", encoding="utf-8").write(key)
-    # Файлы подтверждения прав (Яндекс Вебмастер, Google Search Console и т.п.):
-    # всё из папки root_files/ кладётся в корень сайта как есть.
-    root_files = os.path.join(ROOT, "root_files")
-    if os.path.isdir(root_files):
-        for f in os.listdir(root_files):
-            src = os.path.join(root_files, f)
-            if os.path.isfile(src):
-                shutil.copy(src, os.path.join(dist, f))
     print(f"built {len(arts)} articles -> {dist}")
     return arts
 
