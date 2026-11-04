@@ -5,7 +5,7 @@ description: Google Flow в разборе AI-студии НЕЙРОМЕДИА:
 short: **Google Flow** это веб-студия Google Labs, где в одном проекте делают картинки (Nano Banana) и видео со звуком (Veo 3.1 и Gemini Omni Flash) | **Деньги:** работает на кредитах подписок Google AI Plus, Pro и Ultra, на пробы бывает до 50 бесплатных кредитов в день (осень 2026) | **В России** официально не работает: Google смотрит регион аккаунта и оплаты, VPN по справке Google не помогает | **Для рекламы** Flow хорош как превиз и сцены с речью, финал мы часто собираем в связке с Kling и Seedance
 lead: Flow стал главной точкой входа Google в генеративное видео: тут живут Veo, Gemini Omni и Nano Banana. Разбираем, как им пользоваться, сколько стоят кредиты, почему Flow «не работает в вашей стране» и как мы встраиваем его в производство роликов.
 date: 2026-10-27
-updated: 2026-10-27
+updated: 2026-11-04
 category: instrumenty
 keywords: google flow, google labs flow, google flow ai, google flow как пользоваться, google flow в россии, google flow бесплатно, подписка google flow, google flow veo, google flow nano banana, google flow music, гугл флоу
 cover_kicker: Инструкция и доступ
@@ -31,7 +31,7 @@ Flow Google показала в мае 2025 года как инструмент
 | Февраль 2026 | Во Flow переехали Whisk и ImageFX, Nano Banana стала основной моделью картинок |
 | 30 апреля 2026 | Whisk закрыт, проекты перенесены во Flow |
 | Май 2026 | Gemini Omni Flash, агент Flow Agent, свои инструменты Flow Tools, бета-приложение для Android |
-| Август 2026 | Gemini Omni 1.1 Flash: клип до 10 секунд, продление до 40 секунд |
+| Август 2026 | [Gemini Omni 1.1 Flash](/gemini-omni/): клип до 10 секунд, продление до 40 секунд |
 
 Данные по анонсам Google и профильным изданиям, актуально на конец октября 2026 года.
 
