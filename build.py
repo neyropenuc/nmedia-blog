@@ -525,6 +525,12 @@ def render_index(articles):
 ''' + footer() + "</body></html>"
 
 
+def plural(n, forms=("статья", "статьи", "статей")):
+    n = abs(n) % 100
+    if 11 <= n <= 19: return forms[2]
+    return forms[0] if n % 10 == 1 else forms[1] if 2 <= n % 10 <= 4 else forms[2]
+
+
 def render_hub(key, articles):
     h = HUBS[key]
     url = f"{SITE}/{key}/"
@@ -550,7 +556,7 @@ def render_hub(key, articles):
     rest_html = ('<h2 class="hub-h">Все статьи раздела</h2><div class="grid">' + "".join(card(a) for a in rest) + "</div>") if rest else ""
     return head(h["title"], h["desc"], url, extra=extra) + header(key) + f'''
 <main><div class="wrap"><div class="crumbs"><a href="/">Блог</a> / {html.escape(h["name"])}</div>
-<section class="hero hub"><div class="kicker">Раздел блога · {len(items)} статей</div>
+<section class="hero hub"><div class="kicker">Раздел блога · {len(items)} {plural(len(items))}</div>
 <h1>{html.escape(h["h1"])}</h1>{intro}
 <div class="cats"><a href="/">Все статьи</a>{cats}</div></section>
 {start_html}{rest_html}
