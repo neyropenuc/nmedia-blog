@@ -117,6 +117,8 @@ img{max-width:100%;height:auto;display:block}
 .body figure.frame{margin:40px -60px;position:relative}
 @media(max-width:900px){.body figure.frame{margin:32px 0}}
 .frame img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:16px;border:1px solid var(--line);box-shadow:0 30px 60px -30px rgba(0,0,0,.9)}
+.body figure.frame--v{margin:40px auto;max-width:420px}
+.frame--v img{aspect-ratio:9/16}
 .frame figcaption{text-align:left!important;padding:0 4px;font-size:13px}
 .frame figcaption::before{content:"";display:inline-block;width:18px;height:2px;background:var(--accent);vertical-align:middle;margin-right:10px}
 .strip{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr 1.4fr;gap:10px;margin:34px 0 0;height:200px}

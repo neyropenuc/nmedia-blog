@@ -96,7 +96,9 @@ MEDIA = {m["id"]: m for m in json.load(open(os.path.join(ROOT, "static/media/lib
 def frame_html(m):
     item = MEDIA[m.group(1)]
     cap = (m.group(2) or "").strip() or "Кадр из работ AI-студии НЕЙРОМЕДИА"
-    return (f'<figure class="frame"><img src="{item["src"]}" loading="lazy" decoding="async" width="1600" height="900" '
+    w, h = item.get("w", 1600), item.get("h", 900)
+    cls = "frame frame--v" if h > w else "frame"
+    return (f'<figure class="{cls}"><img src="{item["src"]}" loading="lazy" decoding="async" width="{w}" height="{h}" '
             f'alt="{html.escape(item["alt"])}"><figcaption>{html.escape(cap)}</figcaption></figure>')
 
 
