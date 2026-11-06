@@ -44,6 +44,105 @@ CATEGORIES = {
 }
 
 
+# Тематические разделы (хабы). Статья попадает в раздел по полю hub во front matter,
+# иначе по явному списку HUB_OF, иначе по ключевым словам в slug и H1.
+HUBS = {
+    "video": {
+        "name": "Нейросети для видео",
+        "title": "Нейросети для видео: обзоры, инструкции и тарифы (2026) — Блог НЕЙРОМЕДИА",
+        "h1": "Нейросети для создания видео",
+        "desc": "Kling, Seedance, Veo, Hailuo, Runway и другие видеонейросети: как пользоваться из России, сколько стоят, как писать промпты и собирать из генераций рекламный ролик.",
+        "intro": [
+            "Здесь собраны разборы видеонейросетей, с которыми AI-студия НЕЙРОМЕДИА работает на коммерческих заказах: Kling, Seedance, Google Veo и Flow, Hailuo, Runway, PixVerse и другие. В каждом разборе: как зайти и оплатить из России, что дают бесплатно, сколько стоит секунда видео и какие задачи модель решает лучше конкурентов.",
+            "Если вы только выбираете инструмент, начните с обзора лучших нейросетей для видео, затем откройте разбор конкретной модели. Для готового ролика одной нейросети обычно мало: кадры, движение, звук и монтаж делаются в разных инструментах, и про эту связку у нас отдельные инструкции.",
+        ],
+        "start": ["luchshie-neyroseti-dlya-sozdaniya-video", "kling-ai-kak-polzovatsya", "seedance-2-5-kak-polzovatsya"],
+    },
+    "kartinki": {
+        "name": "Картинки и фото",
+        "title": "Нейросети для картинок и фото: генерация, обработка, открытки — Блог НЕЙРОМЕДИА",
+        "h1": "Нейросети для картинок и обработки фото",
+        "desc": "Midjourney, Nano Banana, Кандинский, Шедеврум и другие нейросети для картинок: как генерировать изображения, обрабатывать фото, делать открытки, логотипы и инфографику.",
+        "intro": [
+            "Раздел про всё, что связано с изображениями: генерацию картинок по описанию, обработку и улучшение фото, удаление фона, открытки, логотипы и инфографику. Разбираем и зарубежные модели вроде Midjourney и Nano Banana, и российские сервисы, которые работают без VPN: Кандинский, Шедеврум, Алису.",
+            "Для студии картинка почти всегда первый шаг ролика: из удачного кадра потом делают видео. Поэтому кроме «как нажать кнопку» в статьях есть то, что важно для коммерческой работы: права на результат, сохранение товара и лица, подготовка кадра к анимации.",
+        ],
+        "start": ["neyroset-dlya-generatsii-kartinok", "midjourney-kak-polzovatsya", "nano-banana-pro-kak-polzovatsya"],
+    },
+    "zvuk": {
+        "name": "Музыка, голос и озвучка",
+        "title": "Нейросети для музыки, голоса и озвучки — Блог НЕЙРОМЕДИА",
+        "h1": "Нейросети для музыки, голоса и озвучки",
+        "desc": "Suno, Udio, ElevenLabs, HeyGen и другие нейросети для звука: как сделать песню, озвучить текст на русском, сделать минус, липсинк и говорящий аватар.",
+        "intro": [
+            "Звук делает из набора красивых кадров настоящий ролик. В этом разделе нейросети для музыки и песен, озвучки текста, клонирования голоса, минусовок, липсинка и говорящих аватаров: Suno, Udio, ElevenLabs, HeyGen и другие.",
+            "Отдельно разбираем то, о чём чаще всего забывают: права на коммерческое использование трека и голоса, работу с русским языком и ударениями и порядок, в котором звук соединяется с видео на монтаже.",
+        ],
+        "start": ["suno-kak-sozdat-pesnyu", "elevenlabs-ozvuchka-na-russkom", "neyroset-dlya-ozvuchki-teksta"],
+    },
+    "biznes": {
+        "name": "Для бизнеса и рекламы",
+        "title": "Нейросети для бизнеса и рекламы: ролики, карточки, презентации — Блог НЕЙРОМЕДИА",
+        "h1": "Нейросети для бизнеса и рекламы",
+        "desc": "Как бизнесу использовать нейросети: рекламный ролик нейросетью, заказ ИИ-видео у студии, карточки товара, презентации, анимированный логотип и внедрение ИИ в работу команды.",
+        "intro": [
+            "Раздел для предпринимателей, маркетологов и брендов. Здесь о том, как сделать рекламный ролик нейросетью своими силами и когда выгоднее заказать его у студии, как устроен ИИ-видеопродакшн, сколько стоит ролик и как нейросети помогают с карточками товара, презентациями и фирменным стилем.",
+            "Все разборы опираются на реальные заказы AI-студии НЕЙРОМЕДИА: ролики для NIVA TRAVEL, СИМ-КОНТРОЛЬ, клиники «Семейная» и других клиентов.",
+        ],
+        "start": ["kak-sdelat-reklamnyy-rolik-s-pomoshchyu-neyroseti", "zakazat-reklamnyy-rolik-neyroset", "neyroseti-dlya-biznesa"],
+    },
+    "obuchenie": {
+        "name": "Обучение и профессия",
+        "title": "Обучение нейросетям: промпты, курсы, профессии в ИИ — Блог НЕЙРОМЕДИА",
+        "h1": "Обучение нейросетям и профессии в ИИ",
+        "desc": "Как научиться работать с нейросетями: промпты, бесплатные нейросети на русском, агрегаторы, курсы по ИИ и профессии AI-креатора и промпт-инженера.",
+        "intro": [
+            "С чего начать работу с нейросетями и как превратить её в профессию. Здесь гайды по промптам, подборки бесплатных нейросетей на русском, разбор агрегаторов, обзор курсов и профессий: AI-креатор, промпт-инженер, специалист по ИИ-видео.",
+            "Мы пишем с позиции студии, которая сама нанимает и обучает специалистов, поэтому честно говорим, какие навыки нужны на реальных проектах, а какие обещания курсов стоит пропускать.",
+        ],
+        "start": ["kak-nauchitsya-delat-video-neyrosetyami", "kak-pisat-prompty-dlya-neyrosetey", "besplatnye-neyroseti-na-russkom"],
+    },
+}
+
+HUB_OF = {
+    "kak-ozhivit-foto-neyrosetyu": "video", "uluchshit-kachestvo-video-neyrosetyu": "video", "capcut-neyroset": "video",
+    "sozdanie-videorolikov": "video", "novogodnee-video-neyrosetyu": "video", "kak-sdelat-klip-neyrosetyu": "video",
+    "promty-dlya-video": "video", "midjourney-kak-polzovatsya": "kartinki", "novogodnyaya-otkrytka-neyrosetyu": "kartinki", "gemini-omni": "video", "google-flow": "video", "viggle-ai": "video",
+    "alisa-neyroset-chto-umeet": "kartinki", "gpt-image": "kartinki", "neyroset-dlya-logotipa": "kartinki",
+    "neyroset-dlya-infografiki": "kartinki", "neyroseti-dlya-dizaynera": "kartinki", "raskrasit-foto-neyrosetyu": "kartinki",
+    "avatar-i-lipsink-neyroset": "zvuk", "heygen-kak-polzovatsya": "zvuk",
+    "ii-videoprodakshn": "biznes", "neyroset-dlya-prezentatsiy": "biznes", "novogodniy-reklamnyy-rolik-neyrosetyu": "biznes",
+    "animirovannyy-logotip-neyrosetyu": "biznes", "neyroset-dlya-kartochek-tovara": "biznes",
+    "agregatory-neyrosetey": "obuchenie", "kursy-po-neyrosetyam": "obuchenie", "ai-kreator-neyrokreator-professiya": "obuchenie",
+    "prompt-inzhener": "obuchenie", "kak-pisat-prompty-dlya-neyrosetey": "obuchenie", "besplatnye-neyroseti-na-russkom": "obuchenie",
+    "kak-nauchitsya-delat-video-neyrosetyami": "obuchenie",
+}
+
+HUB_RULES = [
+    ("zvuk", r"suno|udio|eleven|ozvuch|muzyk|pesn|minus|golos|lipsink|kaver|zvuk|музык|песн|озвуч|голос"),
+    ("biznes", r"reklam|biznes|prodaksh|zakazat|kartochk|prezentats|рекламн|бизнес|заказ"),
+    ("obuchenie", r"kurs|obuch|nauchit|prompt|promt|professi|zarabot|besplatn|agregat|курс|обучен|промпт|професс|заработ"),
+    ("kartinki", r"midjourney|banana|kandinsk|shedevrum|leonardo|krea|seedream|kartin|foto|otkryt|logotip|fon|izobrazh|anime|prichesk|interer|stile|картин|фото|открыт|логотип"),
+    ("video", r"."),
+]
+
+
+def hub_of(a):
+    h = a.get("hub")
+    if h in HUBS:
+        return h
+    if a["slug"] in HUB_OF:
+        return HUB_OF[a["slug"]]
+    if re.search(r"kling|seedance|veo|flow|omni|hailuo|minimax|higgsfield|pixverse|runway|luma|pika|sora|dola|viggle|wan-|video|rolik|klip|animats|multik", a["slug"]):
+        if not re.search(r"reklam|zakazat|prodaksh", a["slug"]):
+            return "video"
+    for s in (a["slug"], a.get("h1", a.get("title", "")).lower()):
+        for k, rx in HUB_RULES[:-1]:
+            if re.search(rx, s):
+                return k
+    return "video"
+
+
 def utm(url, slug, content):
     sep = "&" if "?" in url else "?"
     return f"{url}{sep}utm_source=blog&utm_medium=article&utm_campaign={slug}&utm_content={content}"
@@ -290,6 +389,7 @@ def footer(slug="home"):
     y = datetime.date.today().year
     return f'''<footer class="ftr"><div class="wrap">
 <div>© {y} {BRAND} — AI film studio<br>ИП Седов Н. С.</div>
+<div class="links">{"".join(f'<a href="/{k}/">{v["name"]}</a>' for k, v in HUBS.items())}</div>
 <div class="links"><a href="{utm(STUDIO, slug, "footer")}">nmedia.pro</a><a href="{utm(COURSE, slug, "footer")}">Академия</a>
 <a href="{utm(TG, slug, "footer")}">Telegram</a><a href="/feed.xml">RSS</a></div></div></footer>'''
 
@@ -339,6 +439,7 @@ def render_article(a, all_articles):
     date_iso = a.get("date")
     upd = a.get("updated", date_iso)
     cat = a.get("category", "obuchenie")
+    hub = hub_of(a)
     rt = read_time(a["md"])
     ld = [{
         "@context": "https://schema.org", "@type": "Article", "headline": a.get("h1", a["title"]),
@@ -350,7 +451,7 @@ def render_article(a, all_articles):
     }, {
         "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
             {"@type": "ListItem", "position": 1, "name": "Блог", "item": SITE + "/"},
-            {"@type": "ListItem", "position": 2, "name": CATEGORIES.get(cat, cat), "item": f"{SITE}/#{cat}"},
+            {"@type": "ListItem", "position": 2, "name": HUBS[hub]["name"], "item": f"{SITE}/{hub}/"},
             {"@type": "ListItem", "position": 3, "name": a.get("h1", a["title"]), "item": url}]}]
     ld.append({"@context": "https://schema.org", "@type": "VideoObject", "name": "Шоурил AI-студии НЕЙРОМЕДИА",
                "description": "Рекламные и имиджевые ИИ-ролики студии НЕЙРОМЕДИА: все кадры созданы нейросетями.",
@@ -373,7 +474,7 @@ def render_article(a, all_articles):
         tldr_html = '<div class="tldr"><div class="tldr-h">Коротко</div><ul>' + "".join(
             f"<li>{inline_md(x)}</li>" for x in short) + "</ul></div>"
     upd_html = f' · обновлено <time datetime="{upd}">{ru_date(upd)}</time>' if upd and upd != date_iso else ""
-    rel = [x for x in all_articles if x["slug"] != slug and x.get("category") == cat][:3]
+    rel = [x for x in all_articles if x["slug"] != slug and hub_of(x) == hub][:3]
     if len(rel) < 3:
         rel += [x for x in all_articles if x["slug"] != slug and x not in rel][:3 - len(rel)]
     rel_html = ""
@@ -381,8 +482,8 @@ def render_article(a, all_articles):
         rel_html = '<section class="related"><h2>Читайте также</h2><div class="grid">' + "".join(card(x) for x in rel) + "</div></section>"
     page = head(a["title"], a["description"], url, cover_abs, "article", extra) + header(slug) + f'''
 <main><div class="wrap">
-<div class="crumbs"><a href="/">Блог</a> / <a href="/#{cat}">{CATEGORIES.get(cat, cat)}</a></div>
-<div class="art-head"><div class="kicker">{CATEGORIES.get(cat, cat)}</div>
+<div class="crumbs"><a href="/">Блог</a> / <a href="/{hub}/">{HUBS[hub]["name"]}</a></div>
+<div class="art-head"><div class="kicker">{HUBS[hub]["name"]}</div>
 <h1>{html.escape(a.get("h1", a["title"]))}</h1>
 {f'<p class="lead">{html.escape(lead)}</p>' if lead else ''}
 <div class="author">{AVATAR}<div><b>{AUTHOR}</b>{AUTHOR_ROLE}<span class="creds">Делали ролики для <i>Ростеха</i>, <i>АвтоВАЗа</i>, <i>Кинопоиска</i></span><span class="when"><time datetime="{date_iso}">{ru_date(date_iso)}</time>{upd_html} · {rt} мин чтения</span></div></div></div>
@@ -399,15 +500,15 @@ def author_box(slug):
 
 
 def card(a):
-    cat = a.get("category", "obuchenie")
+    cat = hub_of(a)
     return (f'<a class="card" href="/{a["slug"]}/"><img src="/{a["slug"]}/cover.png" loading="lazy" width="1200" height="630" alt="">'
-            f'<div class="in"><div class="meta"><span class="tag">{CATEGORIES.get(cat, cat)}</span><span>{ru_date(a["date"])}</span></div>'
+            f'<div class="in"><div class="meta"><span class="tag">{HUBS[cat]["name"]}</span><span>{ru_date(a["date"])}</span></div>'
             f'<h2>{html.escape(a.get("h1", a["title"]))}</h2><p>{html.escape(a["description"])}</p></div></a>')
 
 
 def render_index(articles):
-    cats = "".join(f'<a href="#{k}" data-cat="{k}">{v}</a>' for k, v in CATEGORIES.items())
-    cards = "".join(card(a).replace('<a class="card"', f'<a class="card" data-cat="{a.get("category","obuchenie")}"', 1) for a in articles)
+    cats = "".join(f'<a href="/{k}/">{v["name"]}</a>' for k, v in HUBS.items())
+    cards = "".join(card(a) for a in articles)
     title = "Блог НЕЙРОМЕДИА — как делать видео с помощью нейросетей"
     desc = "Практические разборы от AI-студии НЕЙРОМЕДИА: как делать рекламные ролики нейросетями, какие инструменты выбрать и как зарабатывать на ИИ-видео."
     ld = {"@context": "https://schema.org", "@type": "Blog", "name": "Блог НЕЙРОМЕДИА", "url": SITE + "/",
@@ -418,13 +519,42 @@ def render_index(articles):
 <p>Пишем о том, что делаем каждый день на заказах для Ростеха, АвтоВАЗа, Кинопоиска и других брендов: сценарии и промпты, генерация кадров, Kling и Seedance, звук, монтаж и как на этом зарабатывать.</p>
 <div class="strip">{"".join(f'<img src="{MEDIA[i]["src"]}" alt="{html.escape(MEDIA[i]["alt"])}" loading="lazy">' for i in ["perfume-bubble","astronaut","car-road","singer-studio","whale"])}</div>
 <div class="trust">Делали ролики для <b>Ростех</b><b>АвтоВАЗ</b><b>Кинопоиск</b></div>
-<div class="cats"><a href="#" data-cat="" class="on">Все статьи</a>{cats}</div></section>
+<div class="cats"><a href="/" class="on">Все статьи</a>{cats}</div></section>
 <div class="grid" id="grid">{cards}</div>
 {showreel_block("home")}{cta_big("home")}</div></main>
-<script>(function(){{var L=document.querySelectorAll('.cats a'),C=document.querySelectorAll('#grid .card');
-function go(c){{L.forEach(function(a){{a.classList.toggle('on',a.dataset.cat===c)}});C.forEach(function(x){{x.style.display=!c||x.dataset.cat===c?'':'none'}})}}
-L.forEach(function(a){{a.addEventListener('click',function(e){{e.preventDefault();go(a.dataset.cat);history.replaceState(null,'',a.dataset.cat?'#'+a.dataset.cat:'/')}})}});
-if(location.hash)go(location.hash.slice(1));}})();</script>''' + footer() + "</body></html>"
+''' + footer() + "</body></html>"
+
+
+def render_hub(key, articles):
+    h = HUBS[key]
+    url = f"{SITE}/{key}/"
+    items = [a for a in articles if hub_of(a) == key]
+    by = {a["slug"]: a for a in items}
+    start = [by[s] for s in h.get("start", []) if s in by]
+    rest = [a for a in items if a not in start]
+    on = ' class="on"'
+    cats = "".join(f'<a href="/{k}/"{on if k == key else ""}>{v["name"]}</a>' for k, v in HUBS.items())
+    ld = [{"@context": "https://schema.org", "@type": "CollectionPage", "name": h["h1"], "description": h["desc"], "url": url,
+           "inLanguage": "ru", "isPartOf": {"@type": "Blog", "name": "Блог НЕЙРОМЕДИА", "url": SITE + "/"},
+           "mainEntity": {"@type": "ItemList", "itemListElement": [
+               {"@type": "ListItem", "position": n + 1, "url": f"{SITE}/{a['slug']}/", "name": a.get("h1", a["title"])}
+               for n, a in enumerate(start + rest)]}},
+          {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
+              {"@type": "ListItem", "position": 1, "name": "Блог", "item": SITE + "/"},
+              {"@type": "ListItem", "position": 2, "name": h["name"], "item": url}]}]
+    extra = "".join(f'<script type="application/ld+json">{json.dumps(x, ensure_ascii=False)}</script>' for x in ld)
+    intro = "".join(f"<p>{html.escape(p)}</p>" for p in h["intro"])
+    start_html = ""
+    if start:
+        start_html = '<h2 class="hub-h">С чего начать</h2><div class="grid">' + "".join(card(a) for a in start) + "</div>"
+    rest_html = ('<h2 class="hub-h">Все статьи раздела</h2><div class="grid">' + "".join(card(a) for a in rest) + "</div>") if rest else ""
+    return head(h["title"], h["desc"], url, extra=extra) + header(key) + f'''
+<main><div class="wrap"><div class="crumbs"><a href="/">Блог</a> / {html.escape(h["name"])}</div>
+<section class="hero hub"><div class="kicker">Раздел блога · {len(items)} статей</div>
+<h1>{html.escape(h["h1"])}</h1>{intro}
+<div class="cats"><a href="/">Все статьи</a>{cats}</div></section>
+{start_html}{rest_html}
+{cta_big(key)}</div></main>''' + footer(key) + "</body></html>"
 
 
 def render_404():
@@ -435,6 +565,10 @@ def render_404():
 
 def sitemap(articles):
     items = [f"<url><loc>{SITE}/</loc><changefreq>daily</changefreq><priority>1.0</priority></url>"]
+    for k in HUBS:
+        ds = [a.get("updated", a["date"]) for a in articles if hub_of(a) == k]
+        if ds:
+            items.append(f"<url><loc>{SITE}/{k}/</loc><lastmod>{max(ds)}</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>")
     for a in articles:
         items.append(f"<url><loc>{SITE}/{a['slug']}/</loc><lastmod>{a.get('updated', a['date'])}</lastmod><priority>0.8</priority></url>")
     return '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + "".join(items) + "</urlset>"
@@ -480,6 +614,9 @@ def build(include_drafts=False, out="dist"):
         if os.path.isdir(img_dir):
             shutil.copytree(img_dir, os.path.join(d, "img"))
     open(os.path.join(dist, "index.html"), "w", encoding="utf-8").write(render_index(arts))
+    for k in HUBS:
+        os.makedirs(os.path.join(dist, k), exist_ok=True)
+        open(os.path.join(dist, k, "index.html"), "w", encoding="utf-8").write(render_hub(k, arts))
     open(os.path.join(dist, "404.html"), "w", encoding="utf-8").write(render_404())
     open(os.path.join(dist, "sitemap.xml"), "w", encoding="utf-8").write(sitemap(arts))
     open(os.path.join(dist, "feed.xml"), "w", encoding="utf-8").write(rss(arts))

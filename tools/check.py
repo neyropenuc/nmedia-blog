@@ -38,10 +38,12 @@ def pre(dist):
         for ld in re.findall(r'<script type="application/ld\+json">(.*?)</script>', h, re.S):
             try: json.loads(ld)
             except Exception as e: err(f"{slug}: битый JSON-LD {e}")
-        if "FAQPage" not in h: warn(f"{slug}: нет блока FAQ")
-        if 'class="tldr"' not in h: err(f"{slug}: нет блока «Коротко» (short в front matter)")
+        hub = '<article class="body">' not in h  # страница раздела (хаб), не статья
+        if hub and "CollectionPage" not in h: err(f"{slug}: нет ни статьи, ни разметки хаба")
+        if not hub and "FAQPage" not in h: warn(f"{slug}: нет блока FAQ")
+        if not hub and 'class="tldr"' not in h: err(f"{slug}: нет блока «Коротко» (short в front matter)")
         if "{{" in h: err(f"{slug}: остался необработанный шорткод {{...}}")
-        if h.count("nmedia.pro/academy") < 3: err(f"{slug}: мало ссылок на курс")
+        if not hub and h.count("nmedia.pro/academy") < 3: err(f"{slug}: мало ссылок на курс")
         for href in re.findall(r'href="([^"]+)"', h):
             if "nmedia.pro/academy" in href and "utm_source=blog" not in href: err(f"{slug}: ссылка на курс без UTM")
             if href.startswith("/") and not href.startswith("//"):
@@ -52,6 +54,7 @@ def pre(dist):
         for src in re.findall(r'<img[^>]+src="([^"]+)"', h):
             if src.startswith("/") and not os.path.isfile(os.path.join(dist, src.lstrip("/"))):
                 err(f"{slug}: нет картинки {src}")
+        if hub: continue
         if not os.path.isfile(os.path.join(dist, slug, "cover.png")): err(f"{slug}: нет обложки")
         text = re.sub(r"<[^>]+>", " ", re.search(r'<article class="body">(.*)</article>', h, re.S).group(1))
         nwords = len(re.findall(r"\w+", text))
