@@ -156,6 +156,8 @@ CapCut за год превратился из простого редактор
 | Монтаж клипа на песню | CapCut или DaVinci Resolve | Оба бесплатны в базовой версии, подробнее в статье про [клип нейросетью](/kak-sdelat-klip-neyrosetyu/) |
 | Улучшить старое видео | Topaz Video, CapCut | Подробно в разборе [улучшения качества видео](/uluchshit-kachestvo-video-neyrosetyu/) |
 
+Сравнение CapCut с DaVinci Resolve, Premiere, Descript и OpusClip по ИИ-функциям мы собрали в отдельной статье про [нейросети для монтажа видео](/neyroseti-dlya-montazha-video/).
+
 ## Типичные ошибки
 
 - **Ставить «CapCut Pro бесплатно» из неизвестных APK.** Взломанные версии регулярно содержат вредоносный код.
