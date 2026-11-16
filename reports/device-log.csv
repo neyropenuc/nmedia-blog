@@ -5,3 +5,5 @@ date;part;result
 2026-11-14;vc;ok
 2026-11-16;index;ok
 2026-11-16;vc;fail
+2026-11-16;index;skip
+2026-11-16;vc;skip
