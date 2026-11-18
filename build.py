@@ -357,7 +357,7 @@ def metrika():
     # Цели по кликам: курс, Telegram (лид-магнит), студия. utm_content ссылки уходит параметром цели — видно, какая кнопка сработала.
     goals = (f'document.addEventListener("click",function(e){{var a=e.target&&e.target.closest?e.target.closest("a[href]"):null;if(!a)return;'
              f'var h=a.href||"",g="";if(h.indexOf("nmedia.pro/academy")>-1)g="blog_kurs_click";else if(h.indexOf("t.me/")>-1)g="blog_tg_click";'
-             f'else if(/^https?:\\/\\/(www\\.)?nmedia\\.pro/.test(h))g="blog_studio_click";if(!g)return;var c=(h.match(/utm_content=([^&#]+)/)||[])[1]||"";'
+             f'else if(/^https?:\\/\\/(www\\.)?nmedia\\.pro/.test(h))g="blog_studio_click";if(!g)return;var c=(h.match(/utm_content=([^&#]+)/)||[])[1]||("text:"+(a.textContent||"").trim().slice(0,40));'
              f'try{{ym({METRIKA_ID},"reachGoal",g,{{button:c,page:location.pathname}})}}catch(x){{}}}},true);')
     return f'''<script>(function(m,e,t,r,i,k,a){{m[i]=m[i]||function(){{(m[i].a=m[i].a||[]).push(arguments)}};m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)}})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");ym({METRIKA_ID},"init",{{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true}});{old_init}{goals}</script><noscript><div><img src="https://mc.yandex.ru/watch/{METRIKA_ID}" style="position:absolute;left:-9999px" alt="">{old_ns}</div></noscript>'''
 
