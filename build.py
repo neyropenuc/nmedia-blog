@@ -18,7 +18,9 @@ PROMO = "Блог"
 AUTHOR = "Никита Седов"
 AUTHOR_ROLE = "основатель AI-студии НЕЙРОМЕДИА"
 BRAND = "НЕЙРОМЕДИА"
-METRIKA_ID = os.environ.get("METRIKA_ID", "112138775")
+# Основной счётчик Метрики (аккаунт Никиты, общий с nmedia.pro). Старый 112138775 оставлен параллельно, чтобы не терять историю.
+METRIKA_ID = os.environ.get("METRIKA_ID", "114341378")
+METRIKA_OLD_ID = os.environ.get("METRIKA_OLD_ID", "112138775")
 def _find_marked():
     cands = [os.environ.get("MARKED", ""), "/home/claude/.npm-global/lib/node_modules/marked/lib/marked.esm.js"]
     try:
@@ -350,7 +352,14 @@ def read_time(md):
 def metrika():
     if not METRIKA_ID:
         return ""
-    return f'''<script>(function(m,e,t,r,i,k,a){{m[i]=m[i]||function(){{(m[i].a=m[i].a||[]).push(arguments)}};m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)}})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");ym({METRIKA_ID},"init",{{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true}});</script><noscript><div><img src="https://mc.yandex.ru/watch/{METRIKA_ID}" style="position:absolute;left:-9999px" alt=""></div></noscript>'''
+    old_init = f'ym({METRIKA_OLD_ID},"init",{{clickmap:true,trackLinks:true,accurateTrackBounce:true}});' if METRIKA_OLD_ID else ""
+    old_ns = f'<img src="https://mc.yandex.ru/watch/{METRIKA_OLD_ID}" style="position:absolute;left:-9999px" alt="">' if METRIKA_OLD_ID else ""
+    # Цели по кликам: курс, Telegram (лид-магнит), студия. utm_content ссылки уходит параметром цели — видно, какая кнопка сработала.
+    goals = (f'document.addEventListener("click",function(e){{var a=e.target&&e.target.closest?e.target.closest("a[href]"):null;if(!a)return;'
+             f'var h=a.href||"",g="";if(h.indexOf("nmedia.pro/academy")>-1)g="blog_kurs_click";else if(h.indexOf("t.me/")>-1)g="blog_tg_click";'
+             f'else if(/^https?:\\/\\/(www\\.)?nmedia\\.pro/.test(h))g="blog_studio_click";if(!g)return;var c=(h.match(/utm_content=([^&#]+)/)||[])[1]||"";'
+             f'try{{ym({METRIKA_ID},"reachGoal",g,{{button:c,page:location.pathname}})}}catch(x){{}}}},true);')
+    return f'''<script>(function(m,e,t,r,i,k,a){{m[i]=m[i]||function(){{(m[i].a=m[i].a||[]).push(arguments)}};m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)}})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");ym({METRIKA_ID},"init",{{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true}});{old_init}{goals}</script><noscript><div><img src="https://mc.yandex.ru/watch/{METRIKA_ID}" style="position:absolute;left:-9999px" alt="">{old_ns}</div></noscript>'''
 
 
 def head(title, desc, canonical, og_image=None, og_type="website", extra=""):
